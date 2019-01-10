@@ -159,7 +159,7 @@ def main(IterationNumber,TotalBoundaries,TotalLims):
     '''
     #CONDITIONS
     RandomAngle = 20
-    Start = [150,0]
+    Start = [90,0]
     StartAng = random.randint(0,359)
     StartM,StartDir = ConvertDegToMC(StartAng)
     StartMC = MToMC(StartM,Start)
@@ -211,17 +211,17 @@ def main(IterationNumber,TotalBoundaries,TotalLims):
     return XYPlotHold
 
 ### CONDITIONS ###
-X1,X2=120,160
+X1,X2=60,100
 Y1,Y2=-3,3
 
 Boundary1 = [1e10,-X2*1e10]
 BoundaryLims1 = [[X2-0.000001,X2+0.000001],[Y1-0.000001,Y2+0.0000001]]
 
 Boundary2 = [0,Y2]
-BoundaryLims2 = [[X1,X2+0.00001],[Y1-0.0000001,Y1+0.000001]]
+BoundaryLims2 = [[X1,X2+0.00001],[Y2-0.0000001,Y2+0.000001]]
 
 Boundary3 = [0,Y1]
-BoundaryLims3 = [[X1,X2+0.00001],[Y2-0.0000001,Y2+0.000001]]
+BoundaryLims3 = [[X1,X2+0.00001],[Y1-0.0000001,Y1+0.000001]]
 
 ###For A Funnel on the end###
 # BoundaryF1 = [1e10,-60e10]
@@ -271,7 +271,7 @@ TotalLims = [BoundaryLims1,BoundaryLims2,BoundaryLims3,BoundaryLimsEnd] + FunctC
 
 
 
-with open('FarCapillCollY.txt',mode='a') as FileWall:
+with open(r'C:\Scripts\project\CollisionDataStore\FarCapillCollY.txt',mode='a') as FileWall:
     FileWall.truncate(0)
     YHistHold=[]
     for __ in range(50000):
